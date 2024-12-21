@@ -1262,3 +1262,6 @@ def export_decklist(request, decklist_id):
         cards.append(card)
 
     return JsonResponse({ 'cards': cards, 'name': deck_name})
+
+def start(request):
+    return render(request, 'cardDatabase/html/start.html', {})

@@ -1,0 +1,61 @@
+{% extends 'cardDatabase/html/base.html' %}
+{% load static card_database_tags %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/start.css' %}">
+{% endblock %}
+
+{% block ogtitle %}Start - Force of Wind{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Decks
+					</div>
+					<div class="panel-body">
+						<a class="btn btn-outline-light btn-block" href="/decklists/">My decks</a>
+						<a class="btn btn-outline-light btn-block" href="/metrics/">Metrics</a>
+						<a class="btn btn-outline-light btn-block" href="/decklist_search/">Decklist Search</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Utilities
+					</div>
+					<div class="panel-body">
+						<a class="btn btn-outline-light btn-block" href="/pack_select/">Pack Sim</a>
+						<button class="btn btn-outline-light btn-block">{% get_spoiler_link %}</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						External Links
+					</div>
+					<div class="panel-body">
+						<a class="btn btn-primary btn-block" href="https://discord.com/invite/8S5XW6pUEF">Force of Wind Tools Discord</a>
+						<a class="btn btn-primary btn-block" href="https://discord.com/invite/0xN4Mgo37JyrCEc1">FoWTCG Discord</a>
+					</div>
+				</div>
+				{% if user.profile.site_admin %}
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							Admin Options
+						</div>
+						<div class="panel-body">
+							<a class="btn btn-danger btn-block" href="/admin/">Admin Site</a>
+							<a class="btn btn-danger btn-block" href="/add_card/">Add Cards</a>
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

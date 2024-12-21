@@ -1,0 +1,46 @@
+.panel-primary>.panel-heading {
+    background-color: #337ab7;
+}
+
+.panel-warning>.panel-heading {
+    background-color: red;
+}
+
+.panel-default>.panel-heading {
+    background-color: gray;
+}
+
+.panel-heading {
+    padding: 6px;
+    color: white;
+}
+
+.panel.panel-primary {
+    border-color: #337ab7;
+}
+
+.panel.panel-warning {
+    border-color: red;
+}
+
+.panel {
+    border: 1px solid gray;
+    border-radius: 4px 6px;
+    margin-bottom: 20px;
+}
+
+.panel-body {
+    padding: 4px;
+}
+
+.panel-body .btn-block {
+    margin-bottom: 4px;
+}
+
+.btn {
+	text-transform: none;
+}
+
+.btn.btn-outline-light {
+    color: #000 !important;
+}
