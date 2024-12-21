@@ -1264,4 +1264,5 @@ def export_decklist(request, decklist_id):
     return JsonResponse({ 'cards': cards, 'name': deck_name})
 
 def start(request):
-    return render(request, 'cardDatabase/html/start.html', {})
+    ctx = {}
+    return render(request, 'cardDatabase/html/start.html', context=ctx)

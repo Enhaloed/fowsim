@@ -30,7 +30,12 @@
 					</div>
 					<div class="panel-body">
 						<a class="btn btn-outline-light btn-block" href="/pack_select/">Pack Sim</a>
-						<button class="btn btn-outline-light btn-block">{% get_spoiler_link %}</button>
+						<p>---{% get_spoiler_url %}---</p>
+						{% if get_spoiler_url %}
+							<p style="color:red">WHY</p>
+						{% else %}
+							<a class="btn btn-outline-light btn-block" href="{% get_spoiler_url %}">Spoilers</a>
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -44,7 +49,7 @@
 						<a class="btn btn-primary btn-block" href="https://discord.com/invite/0xN4Mgo37JyrCEc1">FoWTCG Discord</a>
 					</div>
 				</div>
-				{% if user.profile.site_admin %}
+				{% if user.is_staff %}
 					<div class="panel panel-warning">
 						<div class="panel-heading">
 							Admin Options
