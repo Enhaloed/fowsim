@@ -3,7 +3,7 @@
 }
 
 .panel-warning>.panel-heading {
-    background-color: red;
+    background-color: #dc0800;
 }
 
 .panel-default>.panel-heading {
@@ -20,7 +20,11 @@
 }
 
 .panel.panel-warning {
-    border-color: red;
+    border-color: #dc0800;
+}
+
+.panel.panel-warning .btn.btn-outline-danger {
+    border-width:1px !important;
 }
 
 .panel {
@@ -34,7 +38,11 @@
 }
 
 .panel-body .btn-block {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+}
+
+.panel-body .btn-block:last-child {
+    margin-bottom: 2px;
 }
 
 .btn {

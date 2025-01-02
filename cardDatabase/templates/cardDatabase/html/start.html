@@ -4,6 +4,7 @@
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'css/start.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-icons.css' %}">
 {% endblock %}
 
 {% block ogtitle %}Start - Force of Wind{% endblock %}
@@ -24,19 +25,17 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="panel panel-default">
+				<div class="panel panel-default" style="border-width:0px">
 					<div class="panel-heading">
 						Utilities
 					</div>
 					<div class="panel-body">
-						<a class="btn btn-outline-light btn-block" href="/pack_select/">Pack Sim</a>
-						<p>---{% get_spoiler_url %}---</p>
-						{% if get_spoiler_url %}
-							<p style="color:red">WHY</p>
-						{% else %}
-							<a class="btn btn-outline-light btn-block" href="{% get_spoiler_url %}">Spoilers</a>
-						{% endif %}
-					</div>
+                        <a class="btn btn-outline-light btn-block" href="/pack_select/">Pack Sim</a>
+                        {% get_spoiler_url as spoiler_url %}
+                        {% if spoiler_url %}
+                            <a class="btn btn-outline-light btn-block" href="{% get_spoiler_url %}">Spoilers</a>
+                        {% endif %}
+                    </div>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -45,8 +44,9 @@
 						External Links
 					</div>
 					<div class="panel-body">
-						<a class="btn btn-primary btn-block" href="https://discord.com/invite/8S5XW6pUEF">Force of Wind Tools Discord</a>
-						<a class="btn btn-primary btn-block" href="https://discord.com/invite/0xN4Mgo37JyrCEc1">FoWTCG Discord</a>
+						<a class="btn btn-outline-light btn-block" href="https://fowtcg.com/">Force of Wind Official Site <i class="bi-box-arrow-up-right"></i></a>
+						<a class="btn btn-primary btn-block" href="https://discord.com/invite/8S5XW6pUEF">Force of Wind Tools Discord <i class="bi-discord"></i></a>
+						<a class="btn btn-primary btn-block" href="https://discord.com/invite/0xN4Mgo37JyrCEc1">FoWTCG Discord <i class="bi-discord"></i></a>
 					</div>
 				</div>
 				{% if user.is_staff %}
@@ -55,8 +55,8 @@
 							Admin Options
 						</div>
 						<div class="panel-body">
-							<a class="btn btn-danger btn-block" href="/admin/">Admin Site</a>
-							<a class="btn btn-danger btn-block" href="/add_card/">Add Cards</a>
+							<a class="btn btn-outline-danger btn-block" href="/admin/">Admin Site</a>
+							<a class="btn btn-outline-danger btn-block" href="/add_card/">Add Cards</a>
 						</div>
 					</div>
 				{% endif %}
